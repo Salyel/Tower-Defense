@@ -15,3 +15,6 @@ margin_left = -45.6124
 margin_top = -61.088
 margin_right = -45.3724
 margin_bottom = -61.088
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
