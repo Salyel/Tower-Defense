@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/graphics/Kenney/PNG/Default size/towerDefense_tile024.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/Kenney/PNG/Default size/towerDefense_tile069.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://src/Tilemaps/MapVerte/MapVerte.gd" type="Script" id=19]
 [ext_resource path="res://src/Tilemaps/MapVerte/Chemin.gd" type="Script" id=20]
 [ext_resource path="res://assets/resources/vagues/Vague1.tres" type="Resource" id=21]
+[ext_resource path="res://src/Towers/GenericTower.tscn" type="PackedScene" id=22]
 
 [sub_resource type="TileSet" id=1]
 0/name = "towerDefense_tile024.png 0"
@@ -288,10 +289,18 @@ margin_left = 829.95
 margin_top = 495.0
 margin_right = 1077.95
 margin_bottom = 663.0
-disabled = true
 text = "Vague suivante ! (Vague 1)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GenericTower" parent="." instance=ExtResource( 22 )]
+position = Vector2( 469.575, 371.149 )
+
+[node name="GenericTower2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 330.138, 371.149 )
+
+[node name="GenericTower3" parent="." instance=ExtResource( 22 )]
+position = Vector2( 174.297, 367.048 )
 [connection signal="timeout" from="Chemin/ApparitionMobs" to="Chemin" method="_on_ApparitionMobs_timeout"]
 [connection signal="pressed" from="nextWave" to="." method="_on_nextWave_pressed"]

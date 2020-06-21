@@ -22,7 +22,7 @@ func _on_ApparitionMobs_timeout():
 	spawn_next_ennemy()
 	
 func spawn_next_ennemy():
-	get_parent().number_of_ennemies += 1
+	Events.emit_signal("new_ennemy")
 	var new_ennemy = ennemy_list[0]
 	ennemy_list.pop_front()
 	self.add_child(new_ennemy)

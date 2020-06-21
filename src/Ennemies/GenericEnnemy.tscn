@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://src/Ennemies/GenericEnnemy.gd" type="Script" id=2]
 [ext_resource path="res://src/UI/HUD/Hp bar.tscn" type="PackedScene" id=3]
 
-[node name="GenericEnnemy" type="PathFollow2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.9205, 32.8506 )
+
+[node name="GenericEnnemy" type="PathFollow2D" groups=[
+"ennemy",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -17,4 +22,10 @@ margin_right = -45.3724
 margin_bottom = -61.088
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="hitbox_shape" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource( 1 )
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
