@@ -1,22 +1,22 @@
 extends Path2D
 
 export (PackedScene) var FirstEnnemy
+export (Resource) var vague
+var number_generics = 0
+var numero_vague = 1
 
-var ennemy_list
-#note : pour les vagues, j'utiliserai des ressources. vidéo : https://www.youtube.com/watch?v=7PhGpMZfEHU
+var ennemy_list = []
 
 func _ready():
-	pass
+	reload_ennemy_list()
 	
 #func _process(delta):
 
 func reload_ennemy_list():
-	var ennemy1 = FirstEnnemy.instance()
-	var ennemy2 = FirstEnnemy.instance()
-	var ennemy3 = FirstEnnemy.instance()
-	var ennemy4 = FirstEnnemy.instance()
-	var ennemy5 = FirstEnnemy.instance()
-	ennemy_list = [ennemy1, ennemy2, ennemy3, ennemy4, ennemy5]
+	for i in range (0, number_generics):
+		var ennemy = FirstEnnemy.instance()
+		ennemy_list.append(ennemy)
+	ennemy_list.shuffle()
 
 func _on_ApparitionMobs_timeout():
 	spawn_next_ennemy()
@@ -28,3 +28,13 @@ func spawn_next_ennemy():
 	self.add_child(new_ennemy)
 	if ennemy_list.size() == 0:
 		$ApparitionMobs.stop()
+
+func next_wave():
+	vague = load("res://assets/resources/vagues/Vague" + str(numero_vague) + ".tres")
+	number_generics = vague.generic
+	numero_vague += 1
+	reload_ennemy_list()
+	spawn_next_ennemy()
+	var text = "Vague suivante ! (Vague " + str(numero_vague) + ")"
+	get_parent().change_button_text(text)
+	$ApparitionMobs.start()

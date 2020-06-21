@@ -13,7 +13,7 @@ func _process(delta):
 
 
 func _on_nextWave_pressed():
-	$Chemin.reload_ennemy_list()
-	$Chemin.spawn_next_ennemy()
-	$Chemin/ApparitionMobs.start()
-	pass # Replace with function body.
+	$Chemin.next_wave()
+	
+func change_button_text(text):
+	$nextWave.text = text
