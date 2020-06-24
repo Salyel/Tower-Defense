@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/police/CaveStory64.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/UI/HUD/HUD.gd" type="Script" id=2]
+[ext_resource path="res://src/UI/HUD/GenericTowerButton.tscn" type="PackedScene" id=3]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1.0
+margin_right = 1921.0
+margin_bottom = 106.0
+color = Color( 0, 0, 0, 0.494118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpLeft" type="Label" parent="."]
+margin_left = 93.0
+margin_top = 12.0
+margin_right = 282.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 1 )
+text = "X/X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hp " type="Label" parent="."]
+margin_left = 3.00003
+margin_top = 11.0
+margin_right = 79.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 1 )
+text = "Hp :"
+
+[node name="Gold" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 58.0001
+margin_right = 118.0
+margin_bottom = 98.0001
+custom_fonts/font = ExtResource( 1 )
+text = "Gold :"
+
+[node name="NumberOfGold" type="Label" parent="."]
+margin_left = 131.0
+margin_top = 58.0
+margin_right = 379.0
+margin_bottom = 98.0
+custom_fonts/font = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenericTowerButton" parent="." instance=ExtResource( 3 )]
+margin_left = 370.707
+margin_top = 11.9583
+margin_right = 486.707
+margin_bottom = 67.9583

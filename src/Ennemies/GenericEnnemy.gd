@@ -2,6 +2,7 @@ extends PathFollow2D
 
 export (float) var SPEED = 200
 export (int) var hpMax = 500
+export (int) var gold_value = 1
 var hp = hpMax
 var tower_focusing = []
 var alive = true
@@ -14,6 +15,8 @@ func _process(delta):
 	#damage(0.5)
 
 func _on_VisibilityNotifier2D_screen_exited():
+	if hp > 0:
+		Events.emit_signal("losing_hp")
 	damage(1000000000)
 
 func damage(amount):
@@ -27,6 +30,7 @@ func damage(amount):
 					tower.target = null
 					tower.get_node("ShootTimer").stop()
 				tower.priority_list.remove(tower.priority_list.find(self))
+			Events.emit_signal("gain_gold", gold_value)
 			queue_free()
 
 

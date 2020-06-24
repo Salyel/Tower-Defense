@@ -17,3 +17,7 @@ extends Node
 
 signal new_ennemy()
 signal dead_ennemy()
+signal losing_hp()
+signal gain_gold(value)
+signal lose_gold(value)
+signal receive_number_gold(number_gold)

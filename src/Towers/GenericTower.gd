@@ -1,6 +1,7 @@
 extends Area2D
 
 export (PackedScene) var projectile
+export (int) var price
 var target = null
 var priority_list = []
 var damage = 40

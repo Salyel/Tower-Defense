@@ -13,6 +13,7 @@ radius = 272.264
 [node name="GenericTower" type="Area2D"]
 script = ExtResource( 2 )
 projectile = ExtResource( 3 )
+price = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 0, 0, 1 )
