@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/UI/HUD/GenericTowerButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/police/CaveStory64.tres" type="DynamicFont" id=2]
 [ext_resource path="res://src/Towers/GenericTower.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/police/Cave-Story.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="ImageTexture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -14,6 +16,7 @@ margin_right = 64.0
 margin_bottom = 56.0
 custom_fonts/font = ExtResource( 2 )
 text = "Tour"
+icon = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

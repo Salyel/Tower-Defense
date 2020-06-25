@@ -5,7 +5,7 @@
 [ext_resource path="res://src/Projectiles/GenericProjectile.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.6841, 31.2467 )
+extents = Vector2( 32.1519, 31.9993 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 272.264
@@ -19,7 +19,9 @@ price = 1
 modulate = Color( 1, 0, 0, 1 )
 texture = ExtResource( 1 )
 
-[node name="Clickbox" type="CollisionShape2D" parent="."]
+[node name="Clickbox" type="CollisionShape2D" parent="." groups=[
+"towers",
+]]
 shape = SubResource( 1 )
 
 [node name="range" type="Area2D" parent="."]

@@ -17,6 +17,7 @@ func _process(delta):
 func _on_VisibilityNotifier2D_screen_exited():
 	if hp > 0:
 		Events.emit_signal("losing_hp")
+		Events.emit_signal("lose_gold", gold_value)
 	damage(1000000000)
 
 func damage(amount):
