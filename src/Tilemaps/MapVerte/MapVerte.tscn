@@ -287,11 +287,14 @@ __meta__ = {
 [node name="GenericTower" parent="." instance=ExtResource( 22 )]
 position = Vector2( 469.575, 371.149 )
 
+[node name="GenericTower4" parent="." instance=ExtResource( 22 )]
+position = Vector2( 309.797, 369.642 )
+
 [node name="GenericTower2" parent="." instance=ExtResource( 22 )]
-position = Vector2( 330.138, 371.149 )
+position = Vector2( 164.33, 377.178 )
 
 [node name="GenericTower3" parent="." instance=ExtResource( 22 )]
-position = Vector2( 174.297, 367.048 )
+position = Vector2( 1181.2, 724.288 )
 
 [node name="Chemin" type="Path2D" parent="."]
 position = Vector2( 0, 1.75809 )

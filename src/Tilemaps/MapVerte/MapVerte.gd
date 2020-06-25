@@ -24,3 +24,16 @@ func on_dead_ennemy():
 	number_of_ennemies -= 1
 	if number_of_ennemies == 0:
 		$"nextWave".disabled = false
+
+func possible_position(position):
+	if position.y > 150 && position.x > 20:
+		if position.y > 1800:
+			return true
+		if position.y > 360 && position.x < 470:
+			return true
+		if position.x > 1450 && position.y > 360:
+			return true
+		if position.y < 730 && position.x > 740 && position.x < 1180:
+			return true
+	else:
+		return false

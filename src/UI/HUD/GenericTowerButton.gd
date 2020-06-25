@@ -4,6 +4,7 @@ export (PackedScene) var tower
 var real_tower
 var waiting_click = false
 
+
 func _ready():
 	Events.connect("receive_number_gold", self, "on_receive_number_gold")
 	real_tower = tower.instance()
@@ -12,7 +13,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if(waiting_click == true):
+		if(possible_position(event.position) && waiting_click == true):
 			waiting_click = false
 			var toweru = tower.instance()
 			toweru.position = event.position 
@@ -31,6 +32,16 @@ func on_receive_number_gold(number_gold):
 func _on_GenericTowerButton_pressed():
 	waiting_click = true
 	self.disabled = true
-	#self.Icon = real_tower.get_node("Sprite").texture.load_path
-	#var toweru = tower.instance()
-	#self.add_child(toweru)
+
+func possible_position(position):
+	if position.y > 150 && position.x > 20:
+		if position.y > 1800:
+			return true
+		if position.y > 360 && position.x < 470:
+			return true
+		if position.x > 1450 && position.y > 360:
+			return true
+		if position.y < 730 && position.x > 740 && position.x < 1180:
+			return true
+	else:
+		return false
